@@ -32,8 +32,12 @@ export default function FetchComponent() {
         const data: Content[] = await res.json();
         setContent(data); // Update content state
         setFilteredContent(data);
-      } catch (err: any) {
-        setError(err.message); // Handle errors
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       } finally {
         setLoading(false); // Stop loading
       }

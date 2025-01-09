@@ -8,14 +8,15 @@ export default async function Home() {
   return (
     <>
       <div className="h-full flex flex-col justify-center items-center">
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-4 mb-6 text-purple-500">
           <GiBrain className="w-12 h-12" />
           <h1 className="text-5xl font-bold">SpotSocial</h1>
         </div>
         <div className="max-w-prose text-center">
           <p className="text-slate-600">
-            A place where you can save your social media content at one place
-            and find content hassle free using new tech stack.
+            Your ultimate hub for organizing all your social media content in
+            one place—find what you need effortlessly with cutting-edge
+            technology!
           </p>
         </div>
       </div>

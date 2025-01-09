@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import prisma from "@/lib/db";
-import { getEmbedding } from "@/lib/openai";
-import { notesIndex } from "@/lib/pinecone";
+// import { getEmbedding } from "@/lib/openai";
+// import { notesIndex } from "@/lib/pinecone";
 import { contentSchema } from "@/lib/Schema";
 import { NextRequest, NextResponse } from "next/server";
 
