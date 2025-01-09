@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import icon from "@/public/Designer.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "./public/Designer.png",
+        url: "/Designer.png",
       },
     ],
   },
