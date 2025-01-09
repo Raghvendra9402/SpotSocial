@@ -6,7 +6,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-gradient-to-br from-slate-400 via-red-400 to-lime-500 h-full flex justify-center items-center">
+    <div className="bg-sky-50 h-full flex justify-center items-center">
       {children}
     </div>
   );

@@ -31,8 +31,8 @@ export default function ContentCardWrapper({
   createdAt,
 }: ContentCardProps) {
   return (
-    <Card className=" w-[300px]  max-h-[400px] overflow-auto no-scrollbar hover:shadow-lg">
-      <CardHeader className="">
+    <Card className=" w-[300px]  max-h-[400px] overflow-auto no-scrollbar hover:shadow-lg flex flex-col">
+      <CardHeader className="space-y-4">
         <CardTitle className="flex justify-between items-center">
           {title}
           <div className="flex gap-1 items-center">
@@ -42,7 +42,7 @@ export default function ContentCardWrapper({
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         {type == "twitter" && (
           <TwitterContent link={link.replace("x", "twitter")} />
         )}

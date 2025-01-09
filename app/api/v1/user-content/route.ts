@@ -1,5 +1,7 @@
 import { auth } from "@/auth";
 import prisma from "@/lib/db";
+import { getEmbedding } from "@/lib/openai";
+import { notesIndex } from "@/lib/pinecone";
 import { contentSchema } from "@/lib/Schema";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -37,6 +39,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
+    //create embedding
+    // const embedding = await getEmbeddingForContent(selectedItem, title, link);
+
+    //start a transaction
+    // const content = await prisma.$transaction(async (tx) => {
     await prisma.content.create({
       data: {
         type: selectedItem,
@@ -47,9 +54,28 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    //   await notesIndex.upsert([
+    //     {
+    //       id: content.id,
+    //       values: embedding,
+    //       metadata: { userEmail: user.email },
+    //     },
+    //   ]);
+
+    //   return content;
+    // });
+
     return NextResponse.json({ success: "Content Added Successfully" });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ error: "Content Addition Failed" });
   }
 }
+
+// async function getEmbeddingForContent(
+//   selectedItem: string,
+//   title: string,
+//   link: string
+// ) {
+//   return getEmbedding(selectedItem + "\n\n" + title + "\n\n" + link + "\n\n");
+// }

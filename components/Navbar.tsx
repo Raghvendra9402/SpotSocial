@@ -7,7 +7,7 @@ import { SignOutButton } from "./signoutButton";
 export default async function Navbar() {
   const session = await auth();
   return (
-    <header className="bg-neutral-200/90 px-2 md:px-5 lg:px-10 py-5 border-b">
+    <header className="bg-neutral-200/90 px-2 md:px-5 lg:px-10 py-5 border-b shadow-md">
       <div className="flex justify-between items-center">
         <Link href={"/"} className="flex items-center gap-2">
           <GiBrain className="w-10 h-9 text-purple-500" />
